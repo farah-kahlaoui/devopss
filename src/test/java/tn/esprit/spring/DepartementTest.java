@@ -35,14 +35,14 @@ Logger logger = LoggerFactory.getLogger(DepartementTest.class);
 
 
 
-@Test
+@Test(timeout=3000)
 public void testgetDepartement() {
 Departement dept = deptService.getDepartement(1);
 assertNotNull(dept.getName());
 logger.info("voila le departement demandé : {} ", dept);
 }
 
-@Test
+@Test(timeout=3000)
 public void testajouterDepartement() {
 	
 Departement dep = new Departement("devops");
@@ -56,7 +56,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-//@Test
+//@Test(timeout=3000)
 //public void testaffecterDepartementAEntreprise() {
 //	
 //	Departement dep = new Departement("devops");
@@ -71,7 +71,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-//@Test
+//@Test(timeout=3000)
 //public void testgetAllDepartement() {
 //	
 //	List<Departement> departements =  deptService.getAllDepartement();
@@ -80,7 +80,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-//@Test
+//@Test(timeout=3000)
 //public void testdeleteDepartementById() {
 //
 //Departement depa = new Departement();
