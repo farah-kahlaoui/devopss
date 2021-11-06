@@ -7,12 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
-
 
 
 @Service
@@ -39,21 +40,34 @@ public class DepartementServiceImpl implements IDepartementService
 		
 	}
 
-	@Override
-	public Departement getDepartement(int departemntId) {
-		if (departementRepository.findById(departemntId).isPresent())  {
-		return departementRepository.findById(departemntId).get() ; }
+	
 		
-		else
-		  logger.info("erreur!");
-		return null;
+		@Override
+		public Departement getDepartement(int departemntId) {
+			int startTime=(int)System.currentTimeMillis();
+		
+			departementRepository.findById(departemntId);
+			
+			int endTime=(int)System.currentTimeMillis();
+			if((endTime-startTime >3)){
+				logger.info("Timeout");
+				
+			}
+			return null;
+			
+		}
 		
 	
-	}
 	
 	@Override
 	public void deleteDepartementById(int departemntId) {
-		departementRepository.delete(departementRepository.findById(departemntId).get());	
+		Optional<Departement> deptest = departementRepository.findById(departemntId) ;
+		
+		if (deptest.isPresent()) {
+			
+			Departement deptt = deptest.get() ;
+		
+			departementRepository.delete(deptt);	}
 	}
 	@Override
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {

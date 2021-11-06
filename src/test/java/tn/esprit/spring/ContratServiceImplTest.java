@@ -63,7 +63,6 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 	
 	
 	
-	
 	@Test(timeout =2000)
 	public void testgetAllContrats() {
 		List<Contrat> contrats = contratRepository.findAll();
