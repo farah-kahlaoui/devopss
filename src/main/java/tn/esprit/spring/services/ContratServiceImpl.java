@@ -44,7 +44,7 @@ public class ContratServiceImpl implements ContratService{
 		contratRepoistory.findById(reference);
 		
 		int endTime=(int)System.currentTimeMillis();
-		if((endTime-startTime >3)){
+		if((endTime-startTime >6)){
 			l.info("be ware");
 			
 		}

@@ -112,7 +112,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 
 
 
-	@Test(timeout =3000)
+	@Test(timeout =6000)
 	public void testretrieveParDateJpql() throws ParseException {
 		try{
 	SimpleDateFormat date= new SimpleDateFormat("yyyy-MM-dd");

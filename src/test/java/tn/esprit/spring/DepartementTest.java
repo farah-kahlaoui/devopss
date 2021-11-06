@@ -49,7 +49,7 @@ public static void intro() {
 	logger.info("les tests unitaires seront lancés")  ;
 }
 
-@Test(timeout=3000)
+@Test(timeout=6000)
 public void testgetDepartement() {
 Departement dep = new Departement("devopss");
 deptService.ajouterDepartement(dep);
@@ -58,7 +58,7 @@ assertNotNull(dep.getId());
 logger.info("voila le departement demandé : {} ", dep);
 }
 
-@Test(timeout=3000)
+@Test(timeout=6000)
 public void testajouterDepartement() {
 
 	try {
@@ -92,7 +92,7 @@ catch (Exception e) {
 
 
 
-@Test(timeout=3000)
+@Test(timeout=6000)
 public void testgetAllDepartement() {
 	
 	List<Departement> departements =  deptService.getAllDepartement();
@@ -102,7 +102,7 @@ public void testgetAllDepartement() {
 
 
 
-@Test(timeout=3000)
+@Test(timeout=6000)
 public void testdeleteDepartementById() {
 
 Departement depa = new Departement();

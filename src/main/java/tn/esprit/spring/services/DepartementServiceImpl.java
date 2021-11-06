@@ -49,7 +49,7 @@ public class DepartementServiceImpl implements IDepartementService
 			departementRepository.findById(departemntId);
 			
 			int endTime=(int)System.currentTimeMillis();
-			if((endTime-startTime >3)){
+			if((endTime-startTime >6)){
 				logger.info("Timeout");
 				
 			}
